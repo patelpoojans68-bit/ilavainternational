@@ -7,72 +7,76 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
             color: #333;
         }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: #ffffff;
-            padding: 40px;
+        header {
+            background-color: #1f4e79;
+            color: #ffffff;
+            padding: 50px 10%;
         }
 
-        h1 {
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 60px 10%;
+        }
+
+        section h2 {
             color: #1f4e79;
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            color: #1f4e79;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 5px;
-            margin-top: 40px;
-        }
-
-        p {
-            font-size: 16px;
+            margin-bottom: 15px;
         }
 
         ul {
             margin-left: 20px;
         }
 
-        .tagline {
-            font-size: 18px;
-            color: #555;
+        .cta {
+            background-color: #f2f6fa;
+            padding: 60px 10%;
+            text-align: center;
         }
 
-        .button {
+        .cta a {
             display: inline-block;
-            margin-top: 15px;
-            padding: 12px 20px;
+            margin-top: 20px;
+            padding: 14px 26px;
             background-color: #1f4e79;
             color: #ffffff;
             text-decoration: none;
             border-radius: 4px;
+            font-size: 16px;
         }
 
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
+        footer {
+            background-color: #1f4e79;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
             font-size: 14px;
-            color: #666;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-
+    <header>
         <h1>Ilava International</h1>
-        <p class="tagline"><strong>India Based Export & Trading Company</strong></p>
-        <p class="tagline">Supplying quality products from India to global markets</p>
+        <p><strong>India Based Export & Trading Company</strong></p>
+        <p>Supplying quality products from India to global markets</p>
+    </header>
 
+    <section>
         <h2>About Us</h2>
         <p>
             Ilava International is an India-based export company engaged in sourcing
@@ -80,7 +84,9 @@
             international markets. We focus on quality assurance, transparent
             communication, and long-term business relationships.
         </p>
+    </section>
 
+    <section>
         <h2>Products We Export</h2>
         <ul>
             <li>Food Products</li>
@@ -88,7 +94,9 @@
             <li>Agricultural Commodities</li>
             <li>Custom Export Orders (as per buyer requirements)</li>
         </ul>
+    </section>
 
+    <section>
         <h2>Why Choose Ilava International</h2>
         <ul>
             <li>India-based sourcing network</li>
@@ -96,20 +104,21 @@
             <li>Competitive export pricing</li>
             <li>Reliable documentation & logistics support</li>
         </ul>
+    </section>
 
+    <div class="cta">
         <h2>Contact Us</h2>
         <p>Email: <strong>info@ilavainternational.com</strong></p>
         <p>Location: India</p>
 
-        <a class="button" href="mailto:info@ilavainternational.com">
+        <a href="mailto:info@ilavainternational.com">
             Send Business Inquiry
         </a>
-
-        <div class="footer">
-            © 2026 Ilava International. All rights reserved.
-        </div>
-
     </div>
+
+    <footer>
+        © 2026 Ilava International. All rights reserved.
+    </footer>
 
 </body>
 </html>
