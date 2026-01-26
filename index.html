@@ -12,10 +12,30 @@
             color: #333;
         }
 
+        /* Navigation */
+        nav {
+            background-color: #ffffff;
+            padding: 15px 10%;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            margin-right: 25px;
+            text-decoration: none;
+            color: #1f4e79;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
         header {
             background-color: #1f4e79;
             color: #ffffff;
-            padding: 50px 10%;
+            padding: 60px 10%;
         }
 
         header h1 {
@@ -70,13 +90,20 @@
 
 <body>
 
-    <header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header id="home">
         <h1>Ilava International</h1>
         <p><strong>India Based Export & Trading Company</strong></p>
         <p>Supplying quality products from India to global markets</p>
     </header>
 
-    <section>
+    <section id="about">
         <h2>About Us</h2>
         <p>
             Ilava International is an India-based export company engaged in sourcing
@@ -86,7 +113,7 @@
         </p>
     </section>
 
-    <section>
+    <section id="products">
         <h2>Products We Export</h2>
         <ul>
             <li>Food Products</li>
@@ -106,7 +133,7 @@
         </ul>
     </section>
 
-    <div class="cta">
+    <div class="cta" id="contact">
         <h2>Contact Us</h2>
         <p>Email: <strong>info@ilavainternational.com</strong></p>
         <p>Location: India</p>
