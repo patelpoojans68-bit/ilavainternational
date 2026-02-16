@@ -16,7 +16,7 @@
     <div class="topbar">
       <div class="container">
         <span>Food powders & processed items ready for global export</span>
-        <span>WhatsApp: 0123456789</span>
+        <span>Email: <a href="mailto:info@ilavainternational.com">info@ilavainternational.com</a></span>
       </div>
     </div>
 
@@ -60,15 +60,15 @@
           <div class="contact-grid">
             <div class="contact-card">
               <h4>Email</h4>
-              <p>info@ilavainternational.com</p>
+              <p><a href="mailto:info@ilavainternational.com">info@ilavainternational.com</a></p>
             </div>
             <div class="contact-card">
               <h4>Phone</h4>
-              <p>0123456789</p>
+              <p><a href="tel:0123456789">0123456789</a></p>
             </div>
             <div class="contact-card">
               <h4>WhatsApp</h4>
-              <p>0123456789</p>
+              <p><a href="https://wa.me/0123456789" target="_blank" rel="noopener noreferrer">0123456789</a></p>
             </div>
             <div class="contact-card">
               <h4>Address</h4>
@@ -94,17 +94,15 @@
               accept-charset="UTF-8"
             >
               <div class="contact-form-grid">
-                <input type="text" id="leadName" name="name" placeholder="Name*" required />
-                <input type="email" id="leadEmail" name="email" placeholder="Email*" required />
-                <input type="tel" id="leadPhone" name="phone" placeholder="Phone*" required />
-                <input type="text" id="leadAddress" name="address" placeholder="Address*" required />
-                <textarea id="leadRequirement" name="requirement" placeholder="Requirement*" rows="5" required></textarea>
+                <input type="text" name="entry.2005620554" placeholder="Name*" required />
+                <input type="email" name="entry.1045781291" placeholder="Email*" required />
+                <input type="tel" name="entry.1166974658" placeholder="Phone*" required />
+                <input type="text" name="entry.1065046570" placeholder="Address*" required />
+                <textarea name="entry.839337160" placeholder="Requirement*" rows="5" required></textarea>
               </div>
-              <input type="hidden" id="entryName" name="entry.2005620554" />
-              <input type="hidden" id="entryEmail" name="entry.1045781291" />
-              <input type="hidden" id="entryPhone" name="entry.1166974658" />
-              <input type="hidden" id="entryAddress" name="entry.1065046570" />
-              <input type="hidden" id="entryRequirement" name="entry.839337160" />
+              <input type="hidden" name="fvv" value="1" />
+              <input type="hidden" name="pageHistory" value="0" />
+              <input type="hidden" name="submit" value="Submit" />
               <button type="submit" class="contact-form-submit">Submit Now</button>
               <p class="contact-form-note" id="leadFormNote"></p>
             </form>
@@ -151,8 +149,8 @@
         </div>
         <div>
           <strong>Contact</strong>
-          <p class="subtle">info@ilavainternational.com</p>
-          <p class="subtle">Phone / WhatsApp: 0123456789</p>
+          <p class="subtle"><a href="mailto:info@ilavainternational.com">info@ilavainternational.com</a></p>
+          <p class="subtle">Phone / WhatsApp: <a href="tel:0123456789">0123456789</a></p>
         </div>
         <div>
           <strong>Location</strong>
@@ -168,32 +166,19 @@
       (function () {
         var form = document.getElementById("leadForm");
         var note = document.getElementById("leadFormNote");
-        var nameInput = document.getElementById("leadName");
-        var emailInput = document.getElementById("leadEmail");
-        var phoneInput = document.getElementById("leadPhone");
-        var addressInput = document.getElementById("leadAddress");
-        var requirementInput = document.getElementById("leadRequirement");
-
-        var entryName = document.getElementById("entryName");
-        var entryEmail = document.getElementById("entryEmail");
-        var entryPhone = document.getElementById("entryPhone");
-        var entryAddress = document.getElementById("entryAddress");
-        var entryRequirement = document.getElementById("entryRequirement");
+        var submitFrame = document.getElementById("googleFormSubmitFrame");
+        var submitted = false;
 
         form.addEventListener("submit", function (event) {
-          entryName.value = nameInput.value;
-          entryEmail.value = emailInput.value;
-          entryPhone.value = phoneInput.value;
-          entryAddress.value = addressInput.value;
-          entryRequirement.value = requirementInput.value;
-
+          submitted = true;
           note.textContent = "Submitting your inquiry...";
           note.classList.add("visible");
+        });
 
-          // Let the form POST to hidden iframe, then redirect user.
-          setTimeout(function () {
+        submitFrame.addEventListener("load", function () {
+          if (submitted) {
             window.location.href = "thank-you.html";
-          }, 900);
+          }
         });
       })();
     </script>
