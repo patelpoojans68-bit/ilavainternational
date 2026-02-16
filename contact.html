@@ -78,6 +78,46 @@
         </div>
       </section>
 
+      <section class="section inquiry-section">
+        <div class="container">
+          <div class="inquiry-form-wrap">
+            <h2 class="inquiry-form-title">Get in Touch</h2>
+            <p class="inquiry-form-subtitle">
+              Share your requirement and our team will contact you.
+            </p>
+            <form
+              class="contact-lead-form"
+              id="leadForm"
+              action="https://docs.google.com/forms/d/e/1FAIpQLSdUp6GQgVq-BDzS_mCWmq9fC4TonkH02bMTlxl7Dek39dCFjQ/formResponse"
+              method="POST"
+              target="googleFormSubmitFrame"
+              accept-charset="UTF-8"
+            >
+              <div class="contact-form-grid">
+                <input type="text" id="leadName" name="name" placeholder="Name*" required />
+                <input type="email" id="leadEmail" name="email" placeholder="Email*" required />
+                <input type="tel" id="leadPhone" name="phone" placeholder="Phone*" required />
+                <input type="text" id="leadAddress" name="address" placeholder="Address*" required />
+                <textarea id="leadRequirement" name="requirement" placeholder="Requirement*" rows="5" required></textarea>
+              </div>
+              <input type="hidden" id="entryName" name="entry.2005620554" />
+              <input type="hidden" id="entryEmail" name="entry.1045781291" />
+              <input type="hidden" id="entryPhone" name="entry.1166974658" />
+              <input type="hidden" id="entryAddress" name="entry.1065046570" />
+              <input type="hidden" id="entryRequirement" name="entry.839337160" />
+              <button type="submit" class="contact-form-submit">Submit Now</button>
+              <p class="contact-form-note" id="leadFormNote"></p>
+            </form>
+            <iframe
+              title="Google Form Submit Frame"
+              name="googleFormSubmitFrame"
+              id="googleFormSubmitFrame"
+              style="display: none"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="container split">
           <div>
@@ -124,5 +164,38 @@
     <a class="whatsapp-button" href="https://wa.me/0123456789" target="_blank">
       WhatsApp Us
     </a>
+    <script>
+      (function () {
+        var form = document.getElementById("leadForm");
+        var note = document.getElementById("leadFormNote");
+        var nameInput = document.getElementById("leadName");
+        var emailInput = document.getElementById("leadEmail");
+        var phoneInput = document.getElementById("leadPhone");
+        var addressInput = document.getElementById("leadAddress");
+        var requirementInput = document.getElementById("leadRequirement");
+
+        var entryName = document.getElementById("entryName");
+        var entryEmail = document.getElementById("entryEmail");
+        var entryPhone = document.getElementById("entryPhone");
+        var entryAddress = document.getElementById("entryAddress");
+        var entryRequirement = document.getElementById("entryRequirement");
+
+        form.addEventListener("submit", function (event) {
+          entryName.value = nameInput.value;
+          entryEmail.value = emailInput.value;
+          entryPhone.value = phoneInput.value;
+          entryAddress.value = addressInput.value;
+          entryRequirement.value = requirementInput.value;
+
+          note.textContent = "Submitting your inquiry...";
+          note.classList.add("visible");
+
+          // Let the form POST to hidden iframe, then redirect user.
+          setTimeout(function () {
+            window.location.href = "thank-you.html";
+          }, 900);
+        });
+      })();
+    </script>
   </body>
 </html>
