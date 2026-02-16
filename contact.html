@@ -86,47 +86,32 @@
               Share your requirement and our team will contact you.
             </p>
             <form
-              class="inquiry-form"
-              action="https://formsubmit.co/info@ilavainternational.com"
+              class="contact-lead-form"
+              id="leadForm"
+              action="https://docs.google.com/forms/d/e/1FAIpQLSdUp6GQgVq-BDzS_mCWmq9fC4TonkH02bMTlxl7Dek39dCFjQ/formResponse"
               method="POST"
+              target="googleFormSubmitFrame"
+              accept-charset="UTF-8"
             >
-              <input type="hidden" name="_subject" value="New Inquiry from ilavainternational.com" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <input
-                type="hidden"
-                name="_next"
-                value="https://www.ilavainternational.com/thank-you.html"
-              />
-              <div class="inquiry-grid">
-                <label>
-                  <span class="sr-only">Your Name</span>
-                  <input type="text" name="name" placeholder="Name*" required />
-                </label>
-                <label>
-                  <span class="sr-only">Your Email</span>
-                  <input type="email" name="email" placeholder="Email*" required />
-                </label>
-                <label>
-                  <span class="sr-only">Your Phone</span>
-                  <input type="tel" name="phone" placeholder="Phone*" required />
-                </label>
-                <label>
-                  <span class="sr-only">Your Address</span>
-                  <input type="text" name="address" placeholder="Address*" required />
-                </label>
-                <label class="inquiry-full">
-                  <span class="sr-only">Your Requirement</span>
-                  <textarea
-                    name="requirement"
-                    placeholder="Requirement*"
-                    rows="6"
-                    required
-                  ></textarea>
-                </label>
+              <div class="contact-form-grid">
+                <input type="text" name="entry.2005620554" placeholder="Name*" required />
+                <input type="email" name="entry.1045781291" placeholder="Email*" required />
+                <input type="tel" name="entry.1166974658" placeholder="Phone*" required />
+                <input type="text" name="entry.1065046570" placeholder="Address*" required />
+                <textarea name="entry.839337160" placeholder="Requirement*" rows="5" required></textarea>
               </div>
-              <button type="submit" class="inquiry-submit">Submit Now</button>
+              <input type="hidden" name="fvv" value="1" />
+              <input type="hidden" name="pageHistory" value="0" />
+              <input type="hidden" name="submit" value="Submit" />
+              <button type="submit" class="contact-form-submit">Submit Now</button>
+              <p class="contact-form-note" id="leadFormNote"></p>
             </form>
+            <iframe
+              title="Google Form Submit Frame"
+              name="googleFormSubmitFrame"
+              id="googleFormSubmitFrame"
+              style="display: none"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -177,5 +162,25 @@
     <a class="whatsapp-button" href="https://wa.me/0123456789" target="_blank">
       WhatsApp Us
     </a>
+    <script>
+      (function () {
+        var form = document.getElementById("leadForm");
+        var note = document.getElementById("leadFormNote");
+        var submitFrame = document.getElementById("googleFormSubmitFrame");
+        var submitted = false;
+
+        form.addEventListener("submit", function (event) {
+          submitted = true;
+          note.textContent = "Submitting your inquiry...";
+          note.classList.add("visible");
+        });
+
+        submitFrame.addEventListener("load", function () {
+          if (submitted) {
+            window.location.href = "thank-you.html";
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
